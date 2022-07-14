@@ -1,24 +1,484 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testCal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xfU-Gm-X3d">
+                                <rect key="frame" x="14.5" y="267" width="346" height="390"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="oRf-8T-f3X">
+                                        <rect key="frame" x="0.0" y="0.0" width="346" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baD-zw-sB7" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.6470740438" green="0.64704704280000003" blue="0.64705950020000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="Zan-VQ-Xwo"/>
+                                                    <constraint firstAttribute="width" constant="70" id="cv8-p2-MZS"/>
+                                                </constraints>
+                                                <state key="normal" title="C">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clearBtnPressedr:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gf7-uM-AzJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="la3-Di-Kdl" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="92" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.6470740438" green="0.64704704280000003" blue="0.64705950020000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="eMg-QM-7gm"/>
+                                                    <constraint firstAttribute="height" constant="70" id="qzl-F0-teI"/>
+                                                </constraints>
+                                                <state key="normal" title="+/-">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="reverseBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Kx-Lr-Mgs"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y95-Fk-eNR" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="184" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.6470740438" green="0.64704704280000003" blue="0.64705950020000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="HOC-1R-RHV"/>
+                                                    <constraint firstAttribute="height" constant="70" id="fpU-Kp-8ie"/>
+                                                </constraints>
+                                                <state key="normal" title="%">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="percentBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6KU-c5-Ct2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auh-XH-XBf" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="276" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.94682782889999995" green="0.63969486949999999" blue="0.23476982120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="9bx-9N-dSj"/>
+                                                    <constraint firstAttribute="width" constant="70" id="oSz-AZ-bKq"/>
+                                                </constraints>
+                                                <state key="normal" title="÷">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="divideBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="31D-YU-pbR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZgW-02-9BK">
+                                        <rect key="frame" x="0.0" y="80" width="346" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6S-Di-ND5" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.20000547169999999" green="0.19999569649999999" blue="0.20000019669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="GQY-n3-9rQ"/>
+                                                    <constraint firstAttribute="height" constant="70" id="gvG-5T-XU3"/>
+                                                </constraints>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E51-jU-kYq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKj-Hj-dAi" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="92" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.20000547169999999" green="0.19999569649999999" blue="0.20000019669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="8Wy-1q-7Sx"/>
+                                                    <constraint firstAttribute="height" constant="70" id="DJr-NX-B4c"/>
+                                                </constraints>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ff5-yb-7z7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7u4-z6-Ab3" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="184" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.20000547169999999" green="0.19999569649999999" blue="0.20000019669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="jMJ-B2-XmH"/>
+                                                    <constraint firstAttribute="width" constant="70" id="uRi-km-AcS"/>
+                                                </constraints>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8js-Sq-Sdp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLs-H0-ABy" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="276" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.94682782889999995" green="0.63969486949999999" blue="0.23476982120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="PlK-Tu-VtO"/>
+                                                    <constraint firstAttribute="width" constant="70" id="Wc7-no-HR8"/>
+                                                </constraints>
+                                                <state key="normal" title="x">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="multiBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DSn-iR-fcG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="y2c-V6-s3G">
+                                        <rect key="frame" x="0.0" y="160" width="346" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46s-ag-2xg" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.20000547169999999" green="0.19999569649999999" blue="0.20000019669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="RfU-QU-C4t"/>
+                                                    <constraint firstAttribute="height" constant="70" id="mIH-os-DVs"/>
+                                                </constraints>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a85-CD-6qS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1o-Oi-rdS" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="92" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.20000547169999999" green="0.19999569649999999" blue="0.20000019669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="NXk-eo-yfO"/>
+                                                    <constraint firstAttribute="height" constant="70" id="jRX-Vh-eml"/>
+                                                </constraints>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dts-bg-6A7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1V-Yu-rdi" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="184" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.20000547169999999" green="0.19999569649999999" blue="0.20000019669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="jn5-a7-ODb"/>
+                                                    <constraint firstAttribute="width" constant="70" id="z1T-N6-GAh"/>
+                                                </constraints>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vYb-vG-I9l"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwX-fa-CCn" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="276" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.94682782889999995" green="0.63969486949999999" blue="0.23476982120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="1d1-Bu-5TP"/>
+                                                    <constraint firstAttribute="width" constant="70" id="C6a-nD-TcZ"/>
+                                                </constraints>
+                                                <state key="normal" title="-">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="minusBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eVu-2E-pMP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="RM8-OF-OWU">
+                                        <rect key="frame" x="0.0" y="240" width="346" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Nz-Wa-Faf" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.20000547169999999" green="0.19999569649999999" blue="0.20000019669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="3Pi-Hc-laa"/>
+                                                    <constraint firstAttribute="height" constant="70" id="Gns-ne-F0x"/>
+                                                </constraints>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oGE-Sg-ULk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zs-kX-idm" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="92" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.20000547169999999" green="0.19999569649999999" blue="0.20000019669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="GNm-xM-CMw"/>
+                                                    <constraint firstAttribute="height" constant="70" id="UBc-ZC-JUU"/>
+                                                </constraints>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2P9-XY-F85"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hec-AF-OVo" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="184" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.20000547169999999" green="0.19999569649999999" blue="0.20000019669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="nts-Fy-Vdn"/>
+                                                    <constraint firstAttribute="height" constant="70" id="p4v-ku-TaS"/>
+                                                </constraints>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ynq-SY-jwK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jft-hF-PAT" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="276" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.94682782889999995" green="0.63969486949999999" blue="0.23476982120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="cjJ-IL-96b"/>
+                                                    <constraint firstAttribute="height" constant="70" id="tY3-bE-ZFi"/>
+                                                </constraints>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="plusButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7WJ-Kw-TWG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="ygz-fe-qm7">
+                                        <rect key="frame" x="0.0" y="320" width="346" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvU-w0-UQj" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="162" height="70"/>
+                                                <color key="backgroundColor" red="0.20000547169999999" green="0.19999569649999999" blue="0.20000019669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="xdF-bu-ZJO"/>
+                                                </constraints>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LFD-xE-0Aa"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="A7b-nC-yES">
+                                                <rect key="frame" x="184" y="0.0" width="162" height="70"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pc-GB-6zq" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                        <color key="backgroundColor" red="0.20000547169999999" green="0.19999569649999999" blue="0.20000019669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="70" id="Suu-Eg-SPP"/>
+                                                            <constraint firstAttribute="height" constant="70" id="fki-Al-Yex"/>
+                                                        </constraints>
+                                                        <state key="normal" title=",">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="dotBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gdV-NB-3J4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Rb-aA-ZCM" customClass="RoundButton" customModule="testCal" customModuleProvider="target">
+                                                        <rect key="frame" x="92" y="0.0" width="70" height="70"/>
+                                                        <color key="backgroundColor" red="0.94682782889999995" green="0.63969486949999999" blue="0.23476982120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="70" id="4px-LA-d4n"/>
+                                                            <constraint firstAttribute="width" constant="70" id="cLg-3G-0VE"/>
+                                                        </constraints>
+                                                        <state key="normal" title="=">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="equalButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SSE-bh-Fnr"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1d-4e-68o">
+                                <rect key="frame" x="14.5" y="172" width="346" height="75"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="phN-Z9-Lsp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBV-wY-2Kn">
+                                <rect key="frame" x="14.5" y="82" width="346" height="75"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="och-Ea-Ly4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fBV-wY-2Kn" firstAttribute="leading" secondItem="E1d-4e-68o" secondAttribute="leading" id="Ezz-2y-JQb"/>
+                            <constraint firstItem="E1d-4e-68o" firstAttribute="leading" secondItem="xfU-Gm-X3d" secondAttribute="leading" id="IBX-sC-Jc5"/>
+                            <constraint firstItem="fBV-wY-2Kn" firstAttribute="trailing" secondItem="E1d-4e-68o" secondAttribute="trailing" id="TW6-vU-mld"/>
+                            <constraint firstItem="xfU-Gm-X3d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cgy-OT-PmY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xfU-Gm-X3d" secondAttribute="bottom" constant="10" id="k6B-Uu-ONJ"/>
+                            <constraint firstItem="E1d-4e-68o" firstAttribute="trailing" secondItem="xfU-Gm-X3d" secondAttribute="trailing" id="k7W-Rc-dFi"/>
+                            <constraint firstItem="E1d-4e-68o" firstAttribute="top" secondItem="fBV-wY-2Kn" secondAttribute="bottom" constant="15" id="wLL-c3-aHv"/>
+                            <constraint firstItem="xfU-Gm-X3d" firstAttribute="top" secondItem="E1d-4e-68o" secondAttribute="bottom" constant="20" id="wqr-K9-4UD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="expessionLabel" destination="fBV-wY-2Kn" id="ga7-gE-ETe"/>
+                        <outlet property="outputLabel" destination="E1d-4e-68o" id="rbJ-EF-9z6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="94"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0Zs-kX-idm">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="46s-ag-2xg">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="5Nz-Wa-Faf">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="5Rb-aA-ZCM">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="7pc-GB-6zq">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="7u4-z6-Ab3">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="H6S-Di-ND5">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Hec-AF-OVo">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Jft-hF-PAT">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="JwX-fa-CCn">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="PKj-Hj-dAi">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="S1o-Oi-rdS">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="auh-XH-XBf">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="baD-zw-sB7">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="hLs-H0-ABy">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="la3-Di-Kdl">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="wvU-w0-UQj">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="y1V-Yu-rdi">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="y95-Fk-eNR">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
